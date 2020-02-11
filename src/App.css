@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+.article-layout{
+  display:grid;
+  grid-auto-rows: 20% auto;
+}
+.asideLayout{
+  display: flex;
+  flex-direction: column;
+}
+.vmc-header{
+  text-align: center;
+  border: 1px solid white;
+  /* box-shadow: gray; */
+  box-shadow: 10px 10px 5px #aaaaaa;
+  border-radius: 5px;
+}
+.vmc-layout-container
+{
+  display: grid;
+  grid-template-columns: 70% auto;
+  height: 100vh;
+  padding: 50px;
+}
+

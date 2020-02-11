@@ -1,0 +1,7 @@
+.costEstimaterCard{
+    text-align: center;
+  border: 1px solid white;
+  /* box-shadow: gray; */
+  box-shadow: 10px 10px 5px #aaaaaa;
+  border-radius: 5px;
+}

@@ -1,0 +1,21 @@
+.chosenlayout{
+display: grid;
+grid-template-rows: 50% 50% ;
+}
+.chosenlayoutHeader{
+display: flex;
+justify-content: space-between;
+}
+.chosenHeading{
+padding: 10px;
+}
+.buttons-container{
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+}
+.buttonNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
