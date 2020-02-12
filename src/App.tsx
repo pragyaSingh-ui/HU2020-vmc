@@ -1,10 +1,62 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import './App.css';
-import LayoutHeader from "./component/LayoutHeader";
-import CardContainer from "./component/cardContainer";
-import CostEstimater from "./component/CostEstimater";
-
-
+import {LayoutHeader} from "./component/LayoutHeader";
+import {CardContainer} from "./component/CardContainer/CardContainer";
+import {CostEstimater} from "./component/CostEstimater";
+interface btn{                                    /*button structure to contain its details */
+  id:number;
+  text:string;
+  disabled:boolean;
+}
+let btnList:btn[]=[                             /*button detail*/
+  {id:1, text:'Choose Image',disabled:false},
+  {id:2, text:'Choose Instance Type',disabled:true},
+  {id:3 , text:'Choose Storage and Network',disabled:true},
+  {id:4, text:'Configure Security',disabled:true},
+  {id:5 , text:'Review & launch',disabled:true}
+]
+interface cardDataInterfce{                                    /*Image card structure to contain its details */
+  heading:string;
+  description:string;
+  config?:number;
+  selected?:boolean;
+}
+let cardData:cardDataInterfce[]= [                    
+  {
+    heading: "Linux 2 image",
+    description: "Linux 2 comes with 5 years of support",
+    config:1,
+    selected:false
+  },
+  {
+    heading: "UbUntu sERVER 18.04 LTS",
+    description: "Linux 2 comes with 5 years of support",
+    config:1,
+    selected:false
+  },
+  {
+    heading: "Red Hat Enterprise Linux 8",
+    description: "Linux 2 comes with 5 years of support",
+    config:1,
+    selected:false
+  },
+  {
+    heading: "MIcrofot Windows Server 2019 Base",
+    description: "Linux 2 comes with 5 years of support",
+    config:1,
+    selected:false
+  },
+  {
+    heading: "SUSE Linux Enterprise Server",
+    description: "Linux 2 comes with 5 years of support",
+    config:1,
+    selected:false,
+  }
+]
+interface CostEstimater{
+  description:String;
+  price:Number;
+}
 const App = () => {
   return (
     <div className="App-container">
@@ -13,8 +65,8 @@ const App = () => {
       </div>
       <main className="vmc-layout-container">
         <article className="article-layout">
-            <LayoutHeader></LayoutHeader>
-            <CardsDisplay></CardsDisplay>
+            <LayoutHeader {...btnList}  />
+            <CardContainer {...cardData}/>
         </article>
         <aside className="asideLayout">
             <CostEstimater></CostEstimater>

@@ -1,0 +1,9 @@
+.button{
+    background-color: blue;
+}
+.disabled {
+    background-color: rgb(198, 238, 252);    
+  }
+  .button:hover{
+    background-color: rgb(125, 212, 241);
+}

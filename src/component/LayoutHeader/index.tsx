@@ -1,31 +1,38 @@
-import React from 'react';
-import './index.css'
-
+import React, { Props, useState } from 'react';
+import './index.css';
+import {Button} from '../Button/button';
+import {Select} from '../Select/select';
 var buttonId:Number;
-const regions=[{id:1,lable:'us-east-1'},
-                {id:2,lable:'us-east-2'},
-                {id:3,lable:'us-west-1'},
-                {id:4,lable:'india-1'}
-                    ]
-function setButtonID(){
 
+interface btn{
+    id:number;
+    text:string;
+    disabled:boolean;
+  }
+interface SelectOptionInterface {
+    label: string;
+    value: any;
 }
-export default function layout() {
+ const options:SelectOptionInterface[]=[{label:'US-East-1',value:'1'},
+                                        {label:'Asia-PAcific-Mumbai',value:'2'},
+                                        {label:'US-West-1',value:'3'},
+                                        {label:'India',value:'4'}
+                                        ]  
+  let choosenHeading="Choose Image";
+export const LayoutHeader:React.FC<btn[]>=( props:btn[])=> {
+    const btnList:btn[]=props;
   return (
       <div className="chosenlayout">
           <div className="chosenlayoutHeader">
-              <div className="chosenHeading"><h1>1.choosen Image</h1></div>
-              <div className="selectBar">
-                  
-              </div>
+  <div className="chosenHeading"><h1>{choosenHeading}</h1></div>
+              <Select options={options}></Select>
           </div>
           <div className="buttons-container">
               <nav className="buttonNav">
-                  <button className="button" >1.choosen Image</button>
-                  <button className="button">2.choosen Instance Type</button>
-                  <button className="button">3.choosen Storage and Network</button>
-                  <button className="button">4.configure Security</button>
-                  <button className="button">5.Review Launch</button>
+                  {btnList.map(element => (
+                      <Button id={element.id} text={element.text} disabled={element.disabled } />
+                  ))
+                }
               </nav>
           </div>
       </div>

@@ -1,0 +1,60 @@
+
+
+.react-selector {
+  font-size:small;
+}
+
+.react-selector--control {
+  position: relative;
+  width: 100%;
+  min-width: 4em;
+  padding: 0.5em 1em;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background: white;
+
+  .react-selector--control:hover, :focus, :active {
+    border: 1px solid primary;
+  }
+}
+
+.react-selector--control--label {
+  padding: 0.5em;
+}
+
+
+.react-selector--menu--list {
+  list-style: none;
+  background: white;
+  padding: 0em;
+  margin: 0;
+  margin-left: 0.5em;
+  margin-top: 0.2em;
+  border-radius:border-radius-lg;
+  border: 1px solid grey;
+
+  :last-child {
+    border: none;
+  }
+}
+
+.menu-list--item {
+  padding: 0.8em 1em;
+  border-bottom: 1px solid grey;
+
+  .menu-list--item:hover {
+    background: primary;
+    color: primary;
+  }
+}
+
+.react-selector--control--label {
+  width: 95%;
+  padding: 0.2em;
+}
+
+.react-selector--dropdown-indicator {
+  position: absolute;
+  right: 8px;
+  top: 15%;
+}
