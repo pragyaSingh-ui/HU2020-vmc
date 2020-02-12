@@ -9,9 +9,15 @@ interface btn{
     text:string;
     disabled:boolean;
   }
+  type cardHeaderProps={
+    btnList:btn[]
+  }
 interface SelectOptionInterface {
     label: string;
     value: any;
+}
+export interface selectedButtonDetail{
+
 }
  const options:SelectOptionInterface[]=[{label:'US-East-1',value:'1'},
                                         {label:'Asia-PAcific-Mumbai',value:'2'},
@@ -19,8 +25,7 @@ interface SelectOptionInterface {
                                         {label:'India',value:'4'}
                                         ]  
   let choosenHeading="Choose Image";
-export const LayoutHeader:React.FC<btn[]>=( props:btn[])=> {
-    const btnList:btn[]=props;
+export const LayoutHeader=( {btnList}:cardHeaderProps)=> {
   return (
       <div className="chosenlayout">
           <div className="chosenlayoutHeader">
@@ -29,7 +34,7 @@ export const LayoutHeader:React.FC<btn[]>=( props:btn[])=> {
           </div>
           <div className="buttons-container">
               <nav className="buttonNav">
-                  {btnList.map(element => (
+                  {btnList && btnList.map((element:btn,index) => (
                       <Button id={element.id} text={element.text} disabled={element.disabled } />
                   ))
                 }

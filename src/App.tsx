@@ -1,14 +1,14 @@
 import React,{ useState } from 'react';
 import './App.css';
 import {LayoutHeader} from "./component/LayoutHeader";
-import {CardContainer} from "./component/CardContainer/CardContainer";
 import {CostEstimater} from "./component/CostEstimater";
+import Card from "./component/Cards"
 interface btn{                                    /*button structure to contain its details */
   id:number;
   text:string;
   disabled:boolean;
 }
-let btnList:btn[]=[                             /*button detail*/
+let btnList:btn[]=[                                   /*button detail*/
   {id:1, text:'Choose Image',disabled:false},
   {id:2, text:'Choose Instance Type',disabled:true},
   {id:3 , text:'Choose Storage and Network',disabled:true},
@@ -58,6 +58,10 @@ interface CostEstimater{
   price:Number;
 }
 const App = () => {
+  const [setCardIndex,updateIndexCard]=useState(0);
+  const cardIndexUpdater= ()=>{
+        updateIndexCard(setCardIndex);
+  }
   return (
     <div className="App-container">
       <div className="vmc-header">
@@ -65,13 +69,16 @@ const App = () => {
       </div>
       <main className="vmc-layout-container">
         <article className="article-layout">
-            <LayoutHeader {...btnList}  />
-            <CardContainer {...cardData}/>
+            <LayoutHeader btnList={btnList}  />
+            {cardData.map(element => (
+                      <Card heading={element.heading} description={element.description} config={element.config } selected={element.selected}/>
+                  ))
+                }
+            
         </article>
         <aside className="asideLayout">
             <CostEstimater></CostEstimater>
         </aside>
-        
       </main>
     </div>
   );

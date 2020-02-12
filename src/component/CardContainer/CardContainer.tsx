@@ -1,15 +1,17 @@
 import React from "react";
 import {Card} from "./card";
 
+
 interface cardData{                                    /*Image card structure to contain its details */
   heading:string;
   description:string;
   config?:number;
   selected?:boolean;
 }
-
-export const CardContainer:React.FC<cardData[]>=(props:cardData[])=>{
-  const cardDataItems:cardData[]=props;
+type cardProps={
+  cardDataItems:cardData[];
+}
+export const CardContainer=({cardDataItems}:cardProps)=>{
 return(
   <React.Fragment>
       {cardDataItems.map(element => (
