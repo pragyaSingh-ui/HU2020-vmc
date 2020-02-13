@@ -1,4 +1,5 @@
-import React,{ useState } from 'react';
+import React,{ useState }from 'react';
+
 import './App.css';
 import {LayoutHeader} from "./component/LayoutHeader";
 import {CostEstimater} from "./component/CostEstimater";
@@ -9,11 +10,11 @@ interface btn{                                    /*button structure to contain 
   disabled:boolean;
 }
 let btnList:btn[]=[                                   /*button detail*/
-  {id:1, text:'Choose Image',disabled:false},
-  {id:2, text:'Choose Instance Type',disabled:true},
-  {id:3 , text:'Choose Storage and Network',disabled:true},
-  {id:4, text:'Configure Security',disabled:true},
-  {id:5 , text:'Review & launch',disabled:true}
+  {id:1, text:'1.Choose Image',disabled:false},
+  {id:2, text:'2.Choose Instance Type',disabled:true},
+  {id:3 , text:'3.Choose Storage and Network',disabled:true},
+  {id:4, text:'4.Configure Security',disabled:true},
+  {id:5 , text:'5.Review & launch',disabled:true}
 ]
 interface cardDataInterfce{                                    /*Image card structure to contain its details */
   heading:string;
@@ -58,6 +59,7 @@ interface CostEstimater{
   price:Number;
 }
 const App = () => {
+ 
   const [setCardIndex,updateIndexCard]=useState(0);
   const cardIndexUpdater= ()=>{
         updateIndexCard(setCardIndex);
@@ -71,7 +73,7 @@ const App = () => {
         <article className="article-layout">
             <LayoutHeader btnList={btnList}  />
             {cardData.map(element => (
-                      <Card value={element}/>
+                      <Card value={element}  />
                   ))
                 }
             
