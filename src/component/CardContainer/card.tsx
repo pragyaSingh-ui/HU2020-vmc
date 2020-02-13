@@ -10,7 +10,7 @@ type cardDataProps={
   value:cardData;
 }
 export const Card=({value}:cardDataProps)=>{
-  const []
+  
       return(
         <div>
          <div className="row"
@@ -23,7 +23,7 @@ export const Card=({value}:cardDataProps)=>{
          <p>{value.description}</p>
         </div>
         <div className="col-md-2" style={{ fontSize: "10px" }}>
-        <input type="radio" name="a" value="64-bit (x86)" onClick={}/>
+        <input type="radio" name="a" value="64-bit (x86)" />
         64-bit (x86)
         <br />
         <input type="radio" name="a" value="64-bit (x86)"  />

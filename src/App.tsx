@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import './App.css';
 import {LayoutHeader} from "./component/LayoutHeader";
 import {CostEstimater} from "./component/CostEstimater";
-import Card from "./component/Cards"
+import {Card} from "./component/CardContainer/card"
 interface btn{                                    /*button structure to contain its details */
   id:number;
   text:string;
@@ -71,7 +71,7 @@ const App = () => {
         <article className="article-layout">
             <LayoutHeader btnList={btnList}  />
             {cardData.map(element => (
-                      <Card heading={element.heading} description={element.description} config={element.config } selected={element.selected}/>
+                      <Card value={element}/>
                   ))
                 }
             
